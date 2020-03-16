@@ -44,7 +44,7 @@ public class QuoteOfTheDayApplication extends ResourceServerConfigurerAdapter
         .antMatchers(HttpMethod.POST, "/sources").hasRole("USER")
         .antMatchers(HttpMethod.PUT, "/sources/**").hasRole("USER")
         .antMatchers(HttpMethod.DELETE, "/sources/**").hasRole("USER")
-        .antMatchers(HttpMethod.GET, "/**").anonymous();
+        .anyRequest().permitAll();
 
   }
 
